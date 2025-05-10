@@ -6,7 +6,7 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-# Define image size and batch size
+
 img_width, img_height = 224, 224
 batch_size = 32
 
@@ -21,14 +21,14 @@ train_datagen = ImageDataGenerator(
 val_datagen = ImageDataGenerator(rescale=1./255)
 
 train_generator = train_datagen.flow_from_directory(
-    'dataset/train', # Replace with the actual path to your training data
+    'dataset/train', 
     target_size=(img_width, img_height),
     batch_size=batch_size,
     class_mode='categorical'
 )
 
 validation_generator = val_datagen.flow_from_directory(
-    'dataset/test',  # Replace with the actual path to your validation data
+    'dataset/test',  
     target_size=(img_width, img_height),
     batch_size=batch_size,
     class_mode='categorical'
